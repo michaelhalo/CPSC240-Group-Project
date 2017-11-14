@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Room {
+public class Room{
 
 	private String building;
 	private String roomNumber;
@@ -8,47 +8,61 @@ public class Room {
 	private String seatingType;
 	private int capacity;
 	
-	private String getBuilding() {
+	public String getBuilding() {
 		return this.building;
 	}
 	
-	private void setBuilding(String building) {
+	public void setBuilding(String building) {
 		this.building = building;
 	}
 	
-	private String getRoomNumber() {
+	public String getRoomNumber() {
 		return this.roomNumber;
 	}
 	
-	private void setRoomNumber(String roomNumber) {
+	public void setRoomNumber(String roomNumber) {
 		this.roomNumber = roomNumber;
 	}
 	
-	private ArrayList<String> getEquipment(){
+	public ArrayList<String> getEquipment(){
 		return this.equipment;
 	}
 	
-	private void setEquipment(ArrayList<String> equipment) {
+	public void setEquipment(ArrayList<String> equipment) {
 		this.equipment = equipment;
 	}
 	
-	private void addEquipment(String equipmentItem) {
+	public void addEquipment(String equipmentItem) {
 		this.equipment.add(equipmentItem);
 	}
 	
-	private String getSeatingType() {
+	public String getSeatingType() {
 		return this.seatingType;
 	}
 	
-	private void setSeatingType(String seatingType) {
+	public void setSeatingType(String seatingType) {
 		this.seatingType = seatingType;
 	}
 	
-	private int getCapacity() {
+	public int getCapacity() {
 		return this.capacity;
 	}
 	
-	private void setCapacity(int capacity) {
+	public void setCapacity(int capacity) {
 		this.capacity = capacity;
+	}
+	
+	public String toString() {
+		
+		String items = "";
+		for(String e: this.equipment) {
+			items = items + ", " + e;
+		}
+		
+		String info = ("Class name: " + this.getClass().getSimpleName() + ", \n" +
+					   "Room location: " + this.building + " Room # " + this.roomNumber + ", \n" + 
+					   "Seating is: " + this.capacity + " seats of the " + this.seatingType + " type, \n" + 
+					   "Room contains: " + items.trim() + "."); 
+		return info;
 	}
 }
