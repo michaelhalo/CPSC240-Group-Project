@@ -1,4 +1,6 @@
-
+/**
+  * @author Brian Walsh
+  */
 public class User {
 
 	String name;

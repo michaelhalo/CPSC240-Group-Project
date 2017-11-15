@@ -1,5 +1,8 @@
 import java.util.ArrayList;
-
+ 
+/**
+  * @author Brian Walsh
+  */
 public class Room{
 
 	private String building;
@@ -63,6 +66,11 @@ public class Room{
 					   "Room location: " + this.building + " Room # " + this.roomNumber + ", \n" + 
 					   "Seating is: " + this.capacity + " seats of the " + this.seatingType + " type, \n" + 
 					   "Room contains: " + items.trim() + "."); 
+		return info;
+	}
+	
+	public String toShortString() {
+		String info = this.building + " #" + this.roomNumber;
 		return info;
 	}
 }

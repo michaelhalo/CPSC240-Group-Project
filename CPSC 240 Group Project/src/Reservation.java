@@ -1,8 +1,7 @@
-import java.util.Calendar;
-
 /**
  *
  * @author Michael
+ * @version 2.0
  */
 public class Reservation extends Room{
 
@@ -31,7 +30,12 @@ public class Reservation extends Room{
     
     public String toString() {
     	String info = super.toString();
-    	info = (info + ", \n" + user.toString() + dateTime.toString());
+    	info = info + ", \n" + user.toString() + ",\n" + dateTime.toString();
+    	return info;
+    }
+    
+    public String toShortString() {
+    	String info = this.user.getName() + " " + this.getBuilding() + " " + this.getRoomNumber() + " " + this.dateTime.toString();
     	return info;
     }
 }
