@@ -4,6 +4,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
 
 
 public class SignIn {
@@ -13,6 +14,7 @@ public class SignIn {
 
         MainMenu openMainMenu = new MainMenu();
         SignUp openSignUp = new SignUp();
+        CalendarGUI calendarGuest = new CalendarGUI();
 
         TextField usernameTextField = new TextField();
         usernameTextField.setPromptText("Username");
@@ -39,6 +41,10 @@ public class SignIn {
         pane.getChildren().addAll(usernameTextField, passwordTextField, signIn, signUp, guest);
 
 
+        User user = new User();
+
+        ArrayList<User> users = user.getUsers();
+
         signIn.setOnAction((ActionEvent event) -> {
 
             openMainMenu.MainMenuGUI();
@@ -49,7 +55,14 @@ public class SignIn {
 
         signUp.setOnAction((ActionEvent event) -> {
 
-            openSignUp.signUpGUI();
+            openSignUp.signUpGUI(users);
+
+        });
+
+        guest.setOnAction((ActionEvent event) -> {
+
+            //Make this send an argument that says this is a guest
+            calendarGuest.calendarOpenGUI();
 
         });
 
