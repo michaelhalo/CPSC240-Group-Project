@@ -95,7 +95,6 @@ public class SignUp extends User {
                     newUser.setName(newName);
                     newUser.setPassword(newPassword);
                     newUser.setAdmin(false);
-                    newUser.setUserId(1); //Is an ID necessary?
 
                     users.add(newUser);
 

@@ -144,11 +144,9 @@ public class CalendarGUI {
             index++;
         }
 
-        //Make an object that can call a method to get available rooms for each day here
+        //Display reservations within the next week
 
         day1Label.setOnAction((ActionEvent event) -> {
-
-            //Make a call to another class to get all available rooms for this day and put the names into a string and display it.
 
             dayListed.setText(day1);
 
