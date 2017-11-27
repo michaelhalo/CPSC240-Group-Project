@@ -1,22 +1,22 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * @author Brian Walsh
  */
-public class Calendar {//requires caution with duplicate info in res.toShortStrings and reservations must be removed, edited, then added again
+public class Calendar {
 
-	private HashMap<String, Reservation> reservationList = new HashMap<String, Reservation>();
+	private ArrayList<Reservation> reservationList = new ArrayList<Reservation>();
 	
 	public void addReservation(Reservation res) {
-		this.reservationList.put(res.toShortString(), res);
+		this.reservationList.add(res);
 	}
 	
 	public void removeReservation(Reservation res) {
-		this.reservationList.remove(res.toShortString());
+		this.reservationList.remove(res);
 	}
 	
 	public void printReservations() {		
-		for(Reservation reservation: reservationList.values()) {
+		for(Reservation reservation: reservationList) {
 			System.out.println(reservation.toString());
 		}
 	}

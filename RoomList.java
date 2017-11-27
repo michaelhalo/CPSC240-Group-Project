@@ -1,18 +1,18 @@
-import java.util.HashMap;
+import java.util.ArrayList;
 
 /**
  * @author Brian Walsh
  */
 public class RoomList {
 
-	private HashMap<String, Room> roomList = new HashMap<String, Room>();
+	private ArrayList<Room> roomList = new ArrayList<Room>();
 	
 	public void addRoom(Room room) {
-		roomList.put(room.toShortString(), room);
+		roomList.add(room);
 	}
 	
 	public void removeRoom(Room room) {
-		roomList.remove(room.toShortString());
+		roomList.remove(room);
 	}
 	
 }
