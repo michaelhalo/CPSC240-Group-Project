@@ -50,7 +50,12 @@ public class MakeReserv {
         //Make an object to the class with all the equipment options and use it to return an array with strings of each equipment in it.
 
         ObservableList<String> equipment = FXCollections.observableArrayList();
-
+        
+        equipment.add("Projector");
+        equipment.add("Smart board");
+        equipment.add("TVs");
+        equipment.add("Computers for students");
+        
         //make a for loop that adds everything from the array to the observable list
 
         ListView equipmentView = new ListView(equipment);
@@ -64,12 +69,16 @@ public class MakeReserv {
         chosenEquipment.setLayoutY(150);
 
         ArrayList equipmentList = new ArrayList();
-
-
+  
         //Make an object to the class with all the seating options and use it to return an array with strings of each seating type in it.
 
         ObservableList<String> seatings = FXCollections.observableArrayList();
 
+        seatings.add("Tables");
+        seatings.add("Desks");
+        seatings.add("Chairs");
+        seatings.add("Auditorium seating");
+        
         //make a for loop that adds everything from the array to the observable list
 
         ListView seatingTypeView = new ListView(seatings);
