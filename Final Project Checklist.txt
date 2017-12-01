@@ -1,11 +1,11 @@
-[ ] View schedule as Guest
-[ ] Register as Guest
+[/] View schedule as Guest
+[/] Register as Guest
 [ ] Search for rooms as User
 [ ] Reserve room as User
 [ ] Cancel or change reservations as Admin
 [ ] Remove user's accounts as Admin
-[ ] GUI
-[ ] Serializable
+[/] GUI
+[/] Serializable
 [ ] Powerpoint
 	[ ] Who are we building it for and how does it meet their needs?
 	[ ] What features did we include?

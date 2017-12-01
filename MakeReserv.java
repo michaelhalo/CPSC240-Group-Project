@@ -177,16 +177,6 @@ public class MakeReserv {
             }
         });
 
-
-
-
-
-
-
-
-
-
-
     }
 
 }
