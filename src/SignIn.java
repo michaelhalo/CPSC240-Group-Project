@@ -116,18 +116,18 @@ public class SignIn {
 
         ArrayList room1 = new ArrayList();
         room1.add("Projector");
-        Room b1Room1 = new Room("B1", "Room1", room1, "Tables", 10);
+        Room b1Room1 = new Room("Trinkle", "B12", room1, "Tables", 10);
 
 
         ArrayList room2 = new ArrayList();
         room2.add("Smart board");
-        Room b1Room2 = new Room("B1", "Room2", room2, "Desks", 34);
+        Room b1Room2 = new Room("Trinkle", "B7", room2, "Desks", 34);
 
 
         ArrayList room3 = new ArrayList();
         room3.add("Computers");
         room3.add("Smart board");
-        Room b1Room3 = new Room("B1", "Room3", room3, "Tables", 25);
+        Room b1Room3 = new Room("Trinkle", "B6", room3, "Tables", 25);
 
 
         ArrayList room4 = new ArrayList();
@@ -135,42 +135,42 @@ public class SignIn {
         room4.add("Projector");
         room4.add("Smart board");
         room4.add("Computers");
-        Room b1Room4 = new Room("B1", "Room4", room4, "Auditorium", 50);
+        Room b1Room4 = new Room("Trinkle", "B5", room4, "Auditorium", 50);
 
 
         ArrayList room5 = new ArrayList();
         room5.add("TV");
         room5.add("Projector");
-        Room b1Room5 = new Room("B1", "Room5", room5, "Chairs", 9);
+        Room b1Room5 = new Room("Trinkle", "B8", room5, "Chairs", 9);
 
 
 
 
         ArrayList room6 = new ArrayList();
         room6.add("Computers");
-        Room b2Room1 = new Room("B2", "Room1", room6, "Chairs", 15);
+        Room b2Room1 = new Room("Hurley Convergence Center", "348", room6, "Chairs", 15);
 
 
         ArrayList room7 = new ArrayList();
         room7.add("TV");
-        Room b2Room2 = new Room("B2", "Room2", room7, "Tables", 16);
+        Room b2Room2 = new Room("Hurley Convergence Center", "349", room7, "Tables", 16);
 
 
         ArrayList room8 = new ArrayList();
         room8.add("Computers");
         room8.add("Projector");
-        Room b2Room3 = new Room("B2", "Room3", room8, "Tables", 18);
+        Room b2Room3 = new Room("Hurley Convergence Center", "328", room8, "Tables", 18);
 
 
         ArrayList room9 = new ArrayList();
         room9.add("TV");
-        Room b2Room4 = new Room("B2", "Room4", room9, "Desks", 24);
+        Room b2Room4 = new Room("Hurley Convergence Center", "327", room9, "Desks", 24);
 
 
         ArrayList room10 = new ArrayList();
         room10.add("Smart board");
         room10.add("Computers");
-        Room b2Room5 = new Room("B2", "Room5", room10, "Desks", 35);
+        Room b2Room5 = new Room("Hurley Convergence Center", "211", room10, "Desks", 35);
 
 
 
@@ -179,29 +179,29 @@ public class SignIn {
         room11.add("TV");
         room11.add("Projector");
         room11.add("Computers");
-        Room b3Room1 = new Room("B3", "Room1", room11, "Auditorium", 45);
+        Room b3Room1 = new Room("Woodard", "211", room11, "Auditorium", 45);
 
 
         ArrayList room12 = new ArrayList();
         room12.add("TV");
-        Room b3Room2 = new Room("B3", "Room2", room12, "Chairs", 31);
+        Room b3Room2 = new Room("Woodard", "212", room12, "Chairs", 31);
 
 
         ArrayList room13 = new ArrayList();
         room13.add("Projector");
-        Room b3Room3 = new Room("B3", "Room3", room13, "Desks", 38);
+        Room b3Room3 = new Room("Woodard", "129", room13, "Desks", 38);
 
 
         ArrayList room14 = new ArrayList();
         room14.add("TV");
         room14.add("Smart board");
-        Room b3Room4 = new Room("B3", "Room4", room14, "Desks", 10);
+        Room b3Room4 = new Room("Woodard", "128", room14, "Desks", 10);
 
 
         ArrayList room15 = new ArrayList();
         room15.add("TV");
         room15.add("Computers");
-        Room b3Room5 = new Room("B3", "Room5", room15, "Tables", 6);
+        Room b3Room5 = new Room("Woodard", "349", room15, "Tables", 6);
 
 
 
