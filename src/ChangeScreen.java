@@ -1,10 +1,12 @@
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -14,21 +16,23 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 /**
- * Created by Bryan on 11/20/2017.
+ * Created by Bryan on 12/3/2017.
  */
-public class MakeReserv {
+public class ChangeScreen {
 
-    public void makeReservationGUI() {
+    boolean equipmentBoolean = false, seatingBoolean = false;
+
+    public void changeScreenGUI(ArrayList<Room> rooms, User user, ArrayList<Reservation> reservations, int index) {
 
         Pane pane = new Pane();
 
         Stage stage = new Stage();
 
-        stage.setTitle("Make a reservation");
+        stage.setTitle("Choose criteria for reservation change");
 
         stage.setScene(new Scene(pane, 850, 500));
 
-        AvailableRooms availableRooms = new AvailableRooms();
+        ChangeRoom changeRoom = new ChangeRoom();
 
 
         Button enter = new Button("Enter");
@@ -44,19 +48,12 @@ public class MakeReserv {
 
         final int ROW_HEIGHT = 24;
 
-
-        //Have "anything" be an option
-
-        //Make an object to the class with all the equipment options and use it to return an array with strings of each equipment in it.
-
         ObservableList<String> equipment = FXCollections.observableArrayList();
-        
+
         equipment.add("Projector");
         equipment.add("Smart board");
         equipment.add("TVs");
-        equipment.add("Computers for students");
-        
-        //make a for loop that adds everything from the array to the observable list
+        equipment.add("Computers");
 
         ListView equipmentView = new ListView(equipment);
         equipmentView.setLayoutX(50);
@@ -69,8 +66,6 @@ public class MakeReserv {
         chosenEquipment.setLayoutY(150);
 
         ArrayList equipmentList = new ArrayList();
-  
-        //Make an object to the class with all the seating options and use it to return an array with strings of each seating type in it.
 
         ObservableList<String> seatings = FXCollections.observableArrayList();
 
@@ -78,8 +73,6 @@ public class MakeReserv {
         seatings.add("Desks");
         seatings.add("Chairs");
         seatings.add("Auditorium seating");
-        
-        //make a for loop that adds everything from the array to the observable list
 
         ListView seatingTypeView = new ListView(seatings);
         seatingTypeView.setLayoutX(350);
@@ -87,19 +80,14 @@ public class MakeReserv {
         seatingTypeView.setPrefWidth(150);
         seatingTypeView.setPrefHeight(seatings.size() * ROW_HEIGHT);
 
-        Label chosenSeating = new Label("Chosen seating types: \n");
-        chosenSeating.setLayoutX(515);
-        chosenSeating.setLayoutY(150);
-
-        ArrayList seatingList = new ArrayList();
 
 
-        //Group size means max size. I don't think we should bother setting ranges of sizes.
 
         TextField groupSize = new TextField();
         groupSize.setLayoutX(650);
         groupSize.setLayoutY(150);
         groupSize.setPromptText("Room capacity");
+        groupSize.clear();
 
         Text notNumberError = new Text("You need to enter a positive integer");
         notNumberError.setLayoutX(630);
@@ -108,7 +96,7 @@ public class MakeReserv {
 
 
 
-        pane.getChildren().addAll(enter, selectLabel, equipmentView, seatingTypeView, groupSize, chosenEquipment, chosenSeating);
+        pane.getChildren().addAll(enter, selectLabel, equipmentView, seatingTypeView, groupSize, chosenEquipment);
 
         stage.show();
 
@@ -130,6 +118,10 @@ public class MakeReserv {
 
                 chosenEquipment.setText("Chosen equipment: \n" + equipmentsString);
 
+                if(equipmentList.size() == 0)
+                    equipmentBoolean = false;
+                else
+                    equipmentBoolean = true;
             }
         });
 
@@ -139,18 +131,7 @@ public class MakeReserv {
             @Override
             public void handle(MouseEvent event) {
 
-                if(seatingList.contains(seatingTypeView.getSelectionModel().getSelectedItem()))
-                    seatingList.remove(seatingTypeView.getSelectionModel().getSelectedItem());
-
-                else
-                    seatingList.add(seatingTypeView.getSelectionModel().getSelectedItem());
-
-                String seatingString = "";
-
-                for(int i = 0; i < seatingList.size(); i++)
-                    seatingString += seatingList.get(i) + "\n";
-
-                chosenSeating.setText("Chosen seating types: \n" + seatingString);
+                seatingBoolean = true;
 
             }
         });
@@ -171,13 +152,23 @@ public class MakeReserv {
                 valid = false;
             }
 
-            if(valid) {
-                availableRooms.availableRoomsGUI(equipmentList, seatingList, group);
+            if(valid && equipmentBoolean && seatingBoolean) {
+                changeRoom.changeRoomGUI(equipmentList, (String)seatingTypeView.getSelectionModel().getSelectedItem(), group, rooms, user, reservations, index);
                 stage.close();
             }
         });
 
+
+
+
+
+
+
+
+
+
+
     }
 
-}
 
+}

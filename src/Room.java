@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.io.*;
 
 /**
  * @author Brian Walsh
@@ -11,6 +10,19 @@ public class Room{
 	private ArrayList<String> equipment;
 	private String seatingType;
 	private int capacity;
+	private int criteria;
+
+	public Room(){
+
+	}
+
+	public Room(String building, String roomNumber, ArrayList equipment, String seatingType, int capacity){
+		this.building = building;
+		this.roomNumber = roomNumber;
+		this.equipment = equipment;
+		this.seatingType = seatingType;
+		this.capacity = capacity;
+	}
 
 	public String getBuilding() {
 		return this.building;
@@ -56,6 +68,28 @@ public class Room{
 		this.capacity = capacity;
 	}
 
+	public void setCriteria(int criteria){
+		this.criteria = criteria;
+	}
+
+	public int getCriteria(){
+		return this.criteria;
+	}
+
+	public String printRoom(){
+
+		ArrayList<String> equipmentList = this.getEquipment();
+		String equipmentString = "";
+
+		for(int i = 0; i < equipmentList.size(); i++)
+			equipmentString = equipmentString + equipmentList.get(i) + "\n";
+
+		String roomString = "Room name: " + this.getRoomNumber() + " \nBuilding name: " + this.getBuilding() + " \nSeating type: " + this.getSeatingType() + " \nEquipment: " + equipmentString + " Group size: " + this.getCapacity();
+
+		return roomString;
+	}
+
+
 	public String toString() {
 
 		String items = "";
@@ -74,55 +108,4 @@ public class Room{
 		String info = this.building + " #" + this.roomNumber;
 		return info;
 	}
-   
-  public void saveRooms(ArrayList rooms){
-   
-      try{
-         FileOutputStream fileOut = new FileOutputStream("Rooms.txt", false);
-         ObjectOutputStream output = new ObjectOutputStream(fileOut);
-      
-         for(int i = 0; i < rooms.size(); i++) {
-            output.writeObject(rooms.get(i));
-         }
-      
-         fileOut.close();
-         output.close();
-      }
-      catch(Exception ex){
-      
-      }
-   
-   }
-
-   public ArrayList getRooms(){
-   
-      ArrayList<Room> rooms = new ArrayList<>();
-   
-      boolean EOF = true;
-   
-      try {
-         FileInputStream fileIn = new FileInputStream("Rooms.txt");
-         ObjectInputStream input = new ObjectInputStream(fileIn);
-      
-         while(EOF) {
-            try {
-               Room room = (Room)input.readObject();
-               rooms.add(room);
-            } 
-            catch (Exception ex) {
-               EOF = false;
-            }
-         }
-      
-         input.close();
-         fileIn.close();
-      }
-      catch(Exception ex){
-         System.out.println(ex);
-      }
-   
-   saveRooms(rooms);
-   return rooms;
-   }
-   
-}//class bracket
+}

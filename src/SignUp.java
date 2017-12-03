@@ -98,11 +98,6 @@ public class SignUp extends User {
 
                     users.add(newUser);
 
-                    if (users.size() != 0) {
-                        for (int i = 0; i < users.size(); i++)
-                            System.out.println(users.get(i).getName());
-                    }
-
                     saveUsers(users);
                     stage.close();
                 }
