@@ -12,7 +12,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 /**
- * Created by Bryan on 12/1/2017.
+ * Created by Bryan on 12/1/2017
  */
 public class AdminChange {
 
@@ -44,7 +44,7 @@ public class AdminChange {
         reservationView.setLayoutY(20);
         reservationView.setPrefWidth(275);
         reservationView.setPrefHeight(15 * ROW_HEIGHT);
-
+   
 
         Button change = new Button("Change");
         change.setLayoutX(450);

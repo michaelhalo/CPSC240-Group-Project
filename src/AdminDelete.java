@@ -29,7 +29,6 @@ public class AdminDelete {
 
         stage.setScene(new Scene(pane, 550, 450));
 
-
         Label chosen = new Label("Choose a user to delete.");
         chosen.setLayoutX(330);
         chosen.setLayoutY(200);

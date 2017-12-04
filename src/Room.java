@@ -13,7 +13,8 @@ public class Room{
 	private int criteria;
 
 	public Room(){
-
+      this.building = "University Center (Default)";
+      this.roomNumber = "Room 112 (Default)";
 	}
 
 	public Room(String building, String roomNumber, ArrayList equipment, String seatingType, int capacity){

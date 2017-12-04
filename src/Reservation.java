@@ -10,6 +10,8 @@ public class Reservation extends Room implements java.io.Serializable{
 
     private String date, time;
     private User user;
+    private String building;
+    private String roomNumber;
 
 
     public void setUser(User user) {
@@ -33,6 +35,23 @@ public class Reservation extends Room implements java.io.Serializable{
     }
     public String getTime(){
         return this.time;
+    }
+
+
+    public String getBuilding() {
+        return this.building;
+    }
+
+    public void setBuilding(String building) {
+        this.building = building;
+    }
+
+    public String getRoomNumber() {
+        return this.roomNumber;
+    }
+
+    public void setRoomNumber(String roomNumber) {
+        this.roomNumber = roomNumber;
     }
 
 
